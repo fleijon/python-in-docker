@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  pythonindocker:
+    image: pythonindocker
+    build:
+      context: .
+      dockerfile: ./Dockerfile

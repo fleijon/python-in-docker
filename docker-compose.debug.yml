@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  pythonindocker:
+    image: pythonindocker
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: ["sh", "-c", "pip install debugpy -t /tmp && python /tmp/debugpy --wait-for-client --listen 0.0.0.0:5678 tests\sampling_tests.py "]
+    ports:
+      - 5678:5678
